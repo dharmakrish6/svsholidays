@@ -11,8 +11,15 @@ img{display:block;width:100%}
 .nav-links a:hover{background:rgba(255,255,255,.12)}
 .whatsapp-btn{display:inline-block;background:#25d366;color:#fff;padding:8px 14px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 18px rgba(37,211,102,.25)}
 .whatsapp-btn:hover{transform:translateY(-1px)}
-.page-hero{position:relative;display:grid;grid-template-columns:1fr;align-items:end;width:100%;max-width:none;margin:0;padding:0;min-height:calc(100vh - 70px);overflow:hidden;border-radius:0;background:linear-gradient(135deg,var(--navy-deep),#1d4b74);}
+.page-hero{position:relative;display:grid;grid-template-columns:1fr;align-items:end;width:100%;max-width:none;margin:0;padding:0;min-height:calc(100vh - 70px);overflow:hidden;border-radius:0;background:linear-gradient(135deg,var(--navy-deep),#1d4b74);background-size:cover;background-position:center;background-repeat:no-repeat;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,26,44,.82),rgba(8,26,44,.2));z-index:1}
+.about-hero{background-image:url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1600&q=80');}
+.packages-hero{background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80');}
+.membership-hero{background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');}
+.hotels-hero{background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');}
+.gallery-hero{background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80');}
+.blog-hero{background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1600&q=80');}
+.contact-hero{background-image:url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=80');}
 .hero-content{position:relative;z-index:2;width:min(100%,560px);padding:clamp(64px,10vw,110px) clamp(24px,4vw,40px) 40px;color:var(--white)}
 .hero-content h1{color:var(--white);text-shadow:0 4px 18px rgba(0,0,0,.25)}
 .hero-content p{color:rgba(255,255,255,.94)}
