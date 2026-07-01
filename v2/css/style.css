@@ -122,6 +122,7 @@ header.scrolled .menu-toggle span, header.solid .menu-toggle span{background:var
   background:linear-gradient(160deg, var(--indigo-deep) 0%, var(--indigo) 60%, #232c4a 100%);
   overflow:hidden;
   padding-bottom:80px;
+  isolation:isolate;
 }
 .page-hero::before{
   content:'';
@@ -141,7 +142,29 @@ header.scrolled .menu-toggle span, header.solid .menu-toggle span{background:var
   background-image: url("../images/jali-pattern.svg");
   background-size:200px 200px;
 }
-.page-hero-content{position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:0 40px; width:100%;}
+.media-slider{position:absolute; inset:0; z-index:0; overflow:hidden;}
+.media-slider::after{
+  content:''; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(110deg, rgba(16,20,42,0.9) 0%, rgba(16,20,42,0.55) 45%, rgba(16,20,42,0.2) 100%);
+}
+.media-slide{position:absolute; inset:0; opacity:0; transform:scale(1.03); transition:opacity .8s ease, transform .8s ease;}
+.media-slide.is-active{opacity:1; transform:scale(1);}
+.media-slide img, .media-slide video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+.media-slide video{background:#000;}
+.media-slide-caption{
+  position:absolute; left:40px; bottom:40px; z-index:3; max-width:420px; padding:22px 24px;
+  background:rgba(16,20,42,0.6); border:1px solid rgba(247,242,233,0.16); backdrop-filter:blur(8px);
+}
+.media-slide-caption .caption-eyebrow{display:inline-block; margin-bottom:10px; color:var(--gold-soft); font-size:0.74rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:600;}
+.media-slide-caption h3{color:var(--ivory); font-size:1.15rem; font-weight:500; margin-bottom:8px;}
+.media-slide-caption p{color:rgba(247,242,233,0.78); font-size:0.92rem; line-height:1.55;}
+.media-slider-controls{position:absolute; right:40px; bottom:40px; z-index:3; display:flex; gap:10px;}
+.slider-btn{width:44px; height:44px; display:grid; place-items:center; border:1px solid rgba(247,242,233,0.3); background:rgba(16,20,42,0.6); color:var(--ivory); cursor:pointer; transition:background .3s ease, transform .3s ease; backdrop-filter:blur(8px);}
+.slider-btn:hover{background:rgba(212,162,76,0.2); transform:translateY(-2px);}
+.slider-dots{position:absolute; left:40px; bottom:20px; z-index:3; display:flex; gap:8px;}
+.slider-dot{width:10px; height:10px; border-radius:50%; border:1px solid rgba(247,242,233,0.4); background:transparent; transition:background .3s ease, transform .3s ease;}
+.slider-dot.is-active{background:var(--gold-soft); transform:scale(1.2);}
+.page-hero-content{position:relative; z-index:3; max-width:1280px; margin:0 auto; padding:0 40px; width:100%;}
 .hero-eyebrow{
   color:var(--gold-soft); font-size:0.82rem; letter-spacing:0.2em; text-transform:uppercase;
   margin-bottom:20px; display:flex; align-items:center; gap:14px; font-weight:500;
@@ -162,6 +185,7 @@ header.scrolled .menu-toggle span, header.solid .menu-toggle span{background:var
     radial-gradient(ellipse at 75% 20%, rgba(212,162,76,0.25), transparent 55%),
     linear-gradient(160deg, var(--indigo-deep) 0%, var(--indigo) 55%, #232c4a 100%);
   overflow:hidden;
+  isolation:isolate;
 }
 .hero::before{
   content:''; position:absolute; inset:0;
@@ -175,7 +199,7 @@ header.scrolled .menu-toggle span, header.solid .menu-toggle span{background:var
   background-size:600px 600px;
   opacity:0.6;
 }
-.hero-content{position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:0 40px; width:100%;}
+.hero-content{position:relative; z-index:3; max-width:1280px; margin:0 auto; padding:0 40px; width:100%;}
 .hero h1{color:var(--ivory); font-size:clamp(2.6rem, 6vw, 5.4rem); line-height:1.04; font-weight:400; max-width:880px; margin-bottom:30px;}
 .hero h1 em{font-style:italic; color:var(--gold-soft); font-weight:500;}
 .hero-sub{color:rgba(247,242,233,0.78); font-size:1.1rem; max-width:520px; margin-bottom:46px; font-weight:300;}

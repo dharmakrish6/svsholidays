@@ -58,7 +58,37 @@
 
 <section class="page-hero">
   <div class="hero-jali" style="background-image:url('images/jali-pattern.svg')"></div>
-  <img src="images/experiences-hero.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;">
+  <div class="media-slider" data-media-slider>
+    <div class="media-slide is-active">
+      <img src="images/experiences-hero.svg" alt="Illustrated travel experience journey">
+      <div class="media-slide-caption">
+        <span class="caption-eyebrow">Experiences</span>
+        <h3>Private journeys that feel personal from the first detail.</h3>
+        <p>We shape every stay, transfer and moment around how you want the trip to feel.</p>
+      </div>
+    </div>
+    <div class="media-slide">
+      <img src="images/destination-tamilnadu.svg" alt="Temple architecture and heritage travel">
+      <div class="media-slide-caption">
+        <span class="caption-eyebrow">Heritage</span>
+        <h3>Temple cities, slow meals and design-led itineraries.</h3>
+        <p>Our experience pages are built to show more than a destination — they show a mood.</p>
+      </div>
+    </div>
+    <div class="media-slide">
+      <video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" autoplay muted loop playsinline poster="images/destination-rajasthan.svg"></video>
+      <div class="media-slide-caption">
+        <span class="caption-eyebrow">Film-led</span>
+        <h3>Video storytelling for immersive walkthroughs and immersive travel.</h3>
+        <p>This slider adds motion without compromising the calm, editorial feel of the V2 site.</p>
+      </div>
+    </div>
+    <div class="media-slider-controls">
+      <button class="slider-btn" type="button" data-slider-prev aria-label="Previous slide">←</button>
+      <button class="slider-btn" type="button" data-slider-next aria-label="Next slide">→</button>
+    </div>
+    <div class="slider-dots"></div>
+  </div>
   <div class="page-hero-content">
     <div class="hero-eyebrow">How We Travel</div>
     <h1>Journeys shaped around <em>who you are</em>, not where we send everyone.</h1>

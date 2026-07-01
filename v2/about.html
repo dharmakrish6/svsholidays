@@ -36,7 +36,37 @@
 
 <section class="page-hero">
   <div class="hero-jali" style="background-image:url('images/jali-pattern.svg')"></div>
-  <img src="images/about-hero.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.45;">
+  <div class="media-slider" data-media-slider>
+    <div class="media-slide is-active">
+      <img src="images/about-hero.svg" alt="Studio illustration for SV Signature Holidays">
+      <div class="media-slide-caption">
+        <span class="caption-eyebrow">Our story</span>
+        <h3>Built from a frustration with ordinary travel.</h3>
+        <p>What began as a response to rigid itineraries has become a studio known for care, detail and personal design.</p>
+      </div>
+    </div>
+    <div class="media-slide">
+      <img src="images/team-1.svg" alt="Studio team illustration">
+      <div class="media-slide-caption">
+        <span class="caption-eyebrow">People first</span>
+        <h3>We travel with the same standards we bring to every client.</h3>
+        <p>Our work is shaped by real-world experience, local partnerships and the belief that travel should feel generous.</p>
+      </div>
+    </div>
+    <div class="media-slide">
+      <video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" autoplay muted loop playsinline poster="images/team-2.svg"></video>
+      <div class="media-slide-caption">
+        <span class="caption-eyebrow">Cinematic detail</span>
+        <h3>Every hero section now feels richer and more immersive.</h3>
+        <p>A moving backdrop helps set the tone before visitors read the story behind the studio.</p>
+      </div>
+    </div>
+    <div class="media-slider-controls">
+      <button class="slider-btn" type="button" data-slider-prev aria-label="Previous slide">←</button>
+      <button class="slider-btn" type="button" data-slider-next aria-label="Next slide">→</button>
+    </div>
+    <div class="slider-dots"></div>
+  </div>
   <div class="page-hero-content">
     <div class="hero-eyebrow">Our Studio</div>
     <h1>We built this studio because the trips we wanted <em>didn't exist</em>.</h1>

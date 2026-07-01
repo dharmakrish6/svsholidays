@@ -26,6 +26,77 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
   }
 
+  // media slider
+  const mediaSliders = document.querySelectorAll('[data-media-slider]');
+  mediaSliders.forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll('.media-slide'));
+    if (!slides.length) return;
+
+    let activeIndex = 0;
+    let autoplayTimer;
+    const dots = slider.querySelector('.slider-dots');
+    const prevBtn = slider.querySelector('[data-slider-prev]');
+    const nextBtn = slider.querySelector('[data-slider-next]');
+
+    const updateDots = () => {
+      if (!dots) return;
+      dots.querySelectorAll('.slider-dot').forEach((dot, index) => {
+        dot.classList.toggle('is-active', index === activeIndex);
+      });
+    };
+
+    const showSlide = (index) => {
+      activeIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('is-active', slideIndex === activeIndex);
+        const video = slide.querySelector('video');
+        if (!video) return;
+        if (slideIndex === activeIndex) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+      updateDots();
+    };
+
+    const startAutoplay = () => {
+      clearInterval(autoplayTimer);
+      autoplayTimer = window.setInterval(() => {
+        showSlide(activeIndex + 1);
+      }, 6000);
+    };
+
+    if (dots) {
+      dots.innerHTML = slides.map((_, index) => `<button class="slider-dot${index === 0 ? ' is-active' : ''}" type="button" aria-label="Show slide ${index + 1}"></button>`).join('');
+      dots.querySelectorAll('.slider-dot').forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          startAutoplay();
+        });
+      });
+    }
+
+    prevBtn?.addEventListener('click', () => {
+      showSlide(activeIndex - 1);
+      startAutoplay();
+    });
+    nextBtn?.addEventListener('click', () => {
+      showSlide(activeIndex + 1);
+      startAutoplay();
+    });
+
+    slider.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+    slider.addEventListener('mouseleave', startAutoplay);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) clearInterval(autoplayTimer);
+      else startAutoplay();
+    });
+
+    showSlide(0);
+    startAutoplay();
+  });
+
   // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window){
