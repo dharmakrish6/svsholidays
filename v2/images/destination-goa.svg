@@ -12,41 +12,35 @@
     </linearGradient>
   </defs>
   <rect width="800" height="1000" fill="url(#skyG)"/>
-  <!-- moon -->
   <circle cx="650" cy="180" r="55" fill="#F7F2E9" opacity="0.22"/>
-  <!-- horizon sea -->
   <rect x="0" y="580" width="800" height="420" fill="url(#seaG)"/>
-  <!-- reflection path -->
   <path d="M350 580 L380 1000 H420 L450 580 Z" fill="#D4A24C" opacity="0.12"/>
-  <!-- waves -->
   <g stroke="#F7F2E9" stroke-width="1.5" opacity="0.15" fill="none">
     <path d="M0 700 Q200 688 400 700 T800 696"/>
     <path d="M0 780 Q200 765 400 780 T800 774"/>
     <path d="M0 870 Q200 855 400 870 T800 864"/>
   </g>
-  <!-- beach -->
   <path d="M0 590 Q400 560 800 590 V640 Q400 600 0 640 Z" fill="#D4A24C" opacity="0.35"/>
-  <!-- palm left -->
   <g fill="#10142A">
     <rect x="100" y="420" width="12" height="200"/>
     <path d="M106 420 Q50 390 55 355 Q90 380 106 420 Z"/>
     <path d="M106 420 Q160 375 168 340 Q128 368 106 420 Z"/>
     <path d="M106 420 Q55 365 68 330 Q96 360 106 420 Z"/>
   </g>
-  <!-- palm right -->
   <g fill="#10142A">
     <rect x="680" y="440" width="11" height="180"/>
     <path d="M685 440 Q630 412 636 378 Q668 398 685 440 Z"/>
     <path d="M685 440 Q738 400 744 368 Q708 390 685 440 Z"/>
   </g>
-  <!-- Portuguese chapel silhouette -->
   <g fill="#1A2238">
-    <rect x="340" y="430" width="120" height="150"/>
-    <path d="M340 430 Q400 390 460 430 Z"/>
-    <rect x="388" y="370" width="24" height="60"/>
-    <path d="M388 370 Q400 348 412 370 Z"/>
-    <!-- cross -->
-    <rect x="397" y="355" width="6" height="20"/>
-    <rect x="391" y="361" width="18" height="5"/>
+    <rect x="320" y="430" width="160" height="180"/>
+    <path d="M320 430 Q400 385 480 430 Z"/>
+    <rect x="368" y="360" width="24" height="72"/>
+    <path d="M368 360 Q380 332 392 360 Z"/>
+    <rect x="395" y="345" width="8" height="24"/>
+    <rect x="387" y="351" width="24" height="6"/>
+    <rect x="340" y="550" width="20" height="60" fill="#D4A24C" opacity="0.4"/>
+    <rect x="440" y="550" width="20" height="60" fill="#D4A24C" opacity="0.4"/>
   </g>
+  <path d="M310 720 Q400 690 490 720" stroke="#F7F2E9" stroke-width="3" opacity="0.2" fill="none"/>
 </svg>

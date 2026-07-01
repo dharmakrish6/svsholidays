@@ -11,11 +11,9 @@
     </linearGradient>
   </defs>
   <rect width="800" height="1000" fill="url(#skyK)"/>
-  <circle cx="400" cy="430" r="90" fill="#F7F2E9" opacity="0.5"/>
+  <circle cx="400" cy="420" r="90" fill="#F7F2E9" opacity="0.5"/>
   <rect y="560" width="800" height="440" fill="url(#waterK)"/>
-  <!-- reflection -->
-  <circle cx="400" cy="660" r="60" fill="#F7F2E9" opacity="0.12"/>
-  <!-- palms left -->
+  <circle cx="402" cy="650" r="72" fill="#F7F2E9" opacity="0.1"/>
   <g fill="#10142A">
     <rect x="70" y="500" width="10" height="180"/>
     <path d="M75 500 Q20 470 30 440 Q60 460 75 500 Z"/>
@@ -28,19 +26,18 @@
     <path d="M704 470 Q655 445 663 418 Q690 440 704 470 Z"/>
     <path d="M704 470 Q752 435 760 410 Q725 430 704 470 Z"/>
   </g>
-  <!-- houseboat -->
   <g>
-    <path d="M250 680 Q400 650 560 680 L540 720 Q400 705 270 720 Z" fill="#6B1E2E"/>
-    <path d="M280 660 Q400 600 520 660 Z" fill="#3A1018"/>
-    <rect x="300" y="630" width="200" height="34" fill="#D4A24C" opacity="0.85"/>
-    <rect x="330" y="635" width="20" height="20" fill="#10142A"/>
-    <rect x="370" y="635" width="20" height="20" fill="#10142A"/>
-    <rect x="410" y="635" width="20" height="20" fill="#10142A"/>
-    <rect x="450" y="635" width="20" height="20" fill="#10142A"/>
+    <path d="M245 710 Q400 665 555 710 L536 748 Q400 715 264 748 Z" fill="#6B1E2E"/>
+    <path d="M280 690 Q400 630 520 690 Z" fill="#3A1018"/>
+    <rect x="300" y="640" width="200" height="34" fill="#D4A24C" opacity="0.9"/>
+    <rect x="330" y="645" width="20" height="20" fill="#10142A"/>
+    <rect x="370" y="645" width="20" height="20" fill="#10142A"/>
+    <rect x="410" y="645" width="20" height="20" fill="#10142A"/>
+    <rect x="450" y="645" width="20" height="20" fill="#10142A"/>
+    <rect x="342" y="600" width="116" height="24" fill="#10142A" opacity="0.85"/>
   </g>
-  <!-- waterline ripples -->
-  <g stroke="#F7F2E9" stroke-width="1.5" opacity="0.15" fill="none">
-    <path d="M0 760 Q200 750 400 760 T800 758"/>
+  <g stroke="#F7F2E9" stroke-width="1.5" opacity="0.16" fill="none">
+    <path d="M0 760 Q200 748 400 760 T800 758"/>
     <path d="M0 820 Q200 808 400 820 T800 815"/>
     <path d="M0 890 Q200 878 400 890 T800 885"/>
   </g>

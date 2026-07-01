@@ -7,7 +7,6 @@
     </linearGradient>
   </defs>
   <rect width="800" height="1000" fill="url(#skyS)"/>
-  <!-- stars -->
   <g fill="#F7F2E9">
     <circle cx="100" cy="80" r="1.5" opacity="0.9"/>
     <circle cx="230" cy="150" r="1.1" opacity="0.6"/>
@@ -16,30 +15,22 @@
     <circle cx="420" cy="100" r="1.4" opacity="0.6"/>
     <circle cx="320" cy="200" r="1" opacity="0.5"/>
   </g>
-  <!-- distant Kangchenjunga -->
   <path d="M0 520 L100 340 L200 480 L320 260 L440 500 L560 300 L680 480 L800 350 V1000 H0 Z" fill="#6B1E2E" opacity="0.45"/>
   <g fill="#F7F2E9" opacity="0.6">
     <path d="M290 300 L320 260 L352 308 Z"/>
     <path d="M530 342 L560 300 L592 348 Z"/>
   </g>
-  <!-- main hill range -->
   <path d="M0 680 L150 500 L300 660 L480 440 L640 640 L800 520 V1000 H0 Z" fill="#10142A"/>
-  <!-- monastery on cliff -->
   <g fill="#1A2238">
-    <!-- cliff base -->
     <path d="M340 680 Q400 640 460 680 L460 780 L340 780 Z"/>
-    <!-- main building -->
     <rect x="350" y="580" width="100" height="100"/>
     <path d="M350 580 Q400 555 450 580 Z"/>
-    <!-- windows -->
     <rect x="368" y="595" width="14" height="18" fill="#D4A24C" opacity="0.5"/>
     <rect x="418" y="595" width="14" height="18" fill="#D4A24C" opacity="0.5"/>
-    <!-- prayer flags pole -->
     <rect x="396" y="530" width="4" height="50"/>
     <path d="M400 530 L430 540 L400 550 Z" fill="#D4A24C" opacity="0.8"/>
     <path d="M400 543 L432 555 L400 567 Z" fill="#6B1E2E" opacity="0.8"/>
   </g>
-  <!-- pine forest -->
   <g fill="#10142A" opacity="0.85">
     <path d="M60 750 L80 680 L100 750 Z"/>
     <path d="M85 760 L105 685 L125 760 Z"/>
@@ -48,7 +39,8 @@
     <path d="M650 750 L670 680 L690 750 Z"/>
     <path d="M680 745 L700 672 L720 745 Z"/>
   </g>
-  <!-- foreground valley mist -->
   <path d="M0 860 Q400 820 800 855 V1000 H0 Z" fill="#1A2238" opacity="0.95"/>
   <path d="M0 900 Q400 870 800 895 V1000 H0 Z" fill="#10142A"/>
+  <path d="M360 640 L440 640" stroke="#D4A24C" stroke-width="3" opacity="0.8"/>
+  <path d="M370 620 L430 620" stroke="#D4A24C" stroke-width="2" opacity="0.7"/>
 </svg>
