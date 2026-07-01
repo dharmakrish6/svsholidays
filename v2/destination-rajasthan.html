@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthan — SV Signature Holidays</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* ── Destination detail extras ── */
+  .dest-hero-full{
+    position:relative; min-height:90vh; display:flex; align-items:flex-end;
+    overflow:hidden; padding-bottom:80px;
+  }
+  .dest-hero-full img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  }
+  .dest-hero-full::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(16,20,42,0.95) 0%, rgba(16,20,42,0.4) 55%, rgba(16,20,42,0.15) 100%);
+  }
+  .dest-hero-full .page-hero-content{z-index:2;}
+
+  /* quick facts bar */
+  .facts-bar{
+    background:var(--indigo); display:flex; flex-wrap:wrap;
+  }
+  .fact{
+    flex:1; min-width:180px; padding:28px 36px; border-right:1px solid rgba(247,242,233,0.1);
+  }
+  .fact:last-child{border-right:none;}
+  .fact-label{color:var(--gold-soft); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; margin-bottom:6px;}
+  .fact-value{color:var(--ivory); font-family:'Fraunces',serif; font-size:1.05rem; font-weight:400;}
+
+  /* itinerary accordion */
+  .itinerary-day{border-bottom:1px solid var(--line);}
+  .day-header{
+    display:flex; align-items:baseline; gap:24px; padding:28px 0; cursor:pointer;
+    user-select:none; transition:color .2s ease;
+  }
+  .day-header:hover{color:var(--maroon);}
+  .day-num{font-family:'Fraunces',serif; font-style:italic; color:var(--gold); font-size:1rem; min-width:60px;}
+  .day-title{font-family:'Fraunces',serif; font-size:1.2rem; font-weight:500; flex:1;}
+  .day-toggle{color:var(--indigo); font-size:1.1rem; transition:transform .3s ease; margin-left:auto;}
+  .day-header.open .day-toggle{transform:rotate(45deg);}
+  .day-body{display:none; padding:0 0 28px 84px;}
+  @media (max-width:640px){.day-body{padding-left:0;}}
+  .day-body.open{display:block;}
+  .day-body p{color:#5a5a5a; font-size:0.96rem; line-height:1.75; margin-bottom:14px;}
+  .day-stay{
+    display:flex; gap:12px; align-items:center; background:var(--ivory-dim);
+    padding:12px 18px; margin-top:16px; border-left:3px solid var(--gold);
+    font-size:0.88rem; color:var(--indigo);
+  }
+
+  /* stays grid */
+  .stays-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  @media (max-width:900px){.stays-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.stays-grid{grid-template-columns:1fr;}}
+  .stay-card{border:1px solid var(--line); overflow:hidden; transition:box-shadow .3s ease;}
+  .stay-card:hover{box-shadow:0 8px 36px rgba(26,34,56,0.12);}
+  .stay-img{aspect-ratio:3/2; overflow:hidden;}
+  .stay-img img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .stay-card:hover .stay-img img{transform:scale(1.06);}
+  .stay-info{padding:22px 24px;}
+  .stay-info .stay-type{color:var(--maroon); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; margin-bottom:6px;}
+  .stay-info h4{font-size:1.05rem; font-weight:600; margin-bottom:8px; color:var(--indigo);}
+  .stay-info p{font-size:0.85rem; color:#666; line-height:1.55;}
+
+  /* sidebar sticky layout */
+  .content-sidebar{display:grid; grid-template-columns:1fr 340px; gap:60px; align-items:start;}
+  @media (max-width:1050px){.content-sidebar{grid-template-columns:1fr;}}
+  .sidebar-sticky{position:sticky; top:100px;}
+  .sidebar-card{
+    border:1px solid var(--line); padding:32px; background:var(--ivory-dim);
+  }
+  .sidebar-card h4{font-size:1.1rem; font-weight:600; margin-bottom:16px; color:var(--indigo);}
+  .sidebar-card p{font-size:0.88rem; color:#666; margin-bottom:24px; line-height:1.6;}
+  .sidebar-card .btn-primary{width:100%; text-align:center; display:block;}
+  .sidebar-divider{border:none; border-top:1px solid var(--line); margin:24px 0;}
+  .sidebar-item{display:flex; gap:12px; margin-bottom:14px; font-size:0.85rem; align-items:flex-start;}
+  .sidebar-item .si-label{color:var(--maroon); font-weight:600; min-width:80px; font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase; padding-top:2px;}
+  .sidebar-item span{color:var(--charcoal);}
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="destinations.html">Destinations</a>
+  <a href="experiences.html">Experiences</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Plan My Trip</a>
+</div>
+
+<header id="siteHeader">
+  <a href="index.html" class="logo">SV <span class="mark">Signature</span> Holidays</a>
+  <nav>
+    <div class="nav-links">
+      <a class="nav-link active" href="destinations.html">Destinations</a>
+      <a class="nav-link" href="experiences.html">Experiences</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="enquire-btn">Plan This Trip</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- Full-bleed hero -->
+<section class="dest-hero-full">
+  <img src="images/destination-rajasthan.svg" alt="Rajasthan palace at dusk — illustrated">
+  <div class="hero-jali" style="background-image:url('images/jali-pattern.svg');opacity:0.12;"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="destinations.html">Destinations</a> &nbsp;/&nbsp; Rajasthan</div>
+    <div class="hero-eyebrow">North India</div>
+    <h1>Rajasthan</h1>
+    <p class="lead">A kingdom that never quite became a memory — because it's still too present, too alive, too coloured to be confined to history.</p>
+  </div>
+</section>
+
+<!-- Quick facts bar -->
+<div class="facts-bar">
+  <div class="fact"><div class="fact-label">Best Season</div><div class="fact-value">Oct – Feb</div></div>
+  <div class="fact"><div class="fact-label">Recommended Duration</div><div class="fact-value">8 – 14 nights</div></div>
+  <div class="fact"><div class="fact-label">Experience Type</div><div class="fact-value">Heritage · Family · Honeymoon</div></div>
+  <div class="fact"><div class="fact-label">Nearest Entry Points</div><div class="fact-value">Jaipur · Jodhpur · Udaipur</div></div>
+</div>
+
+<!-- Why Rajasthan -->
+<section class="section">
+  <div class="wrap">
+    <div class="split reveal">
+      <div class="split-img"><img src="images/destination-tamilnadu.svg" alt="Detail of ornate facade"></div>
+      <div class="split-text">
+        <div class="philosophy-label">Why Rajasthan</div>
+        <h2>The most-visited state in India — and still the most underexplored.</h2>
+        <p>Everyone knows the Golden Triangle. We avoid it. Not because Jaipur, Agra and Delhi aren't worth visiting — they are — but because Rajasthan's real depth lies elsewhere: in the painted havelis of Shekhawati, in a hill fort at five in the morning before the buses arrive, in a village stay with a family whose ancestors were court musicians.</p>
+        <p>We design Rajasthan itineraries that are anchored in the famous and enriched by the hidden. The Amber Fort is extraordinary. So is the hour before it opens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sample 10-day itinerary + sidebar -->
+<section class="section-tight section-dim">
+  <div class="wrap">
+    <div class="content-sidebar">
+      <!-- Main itinerary -->
+      <div>
+        <div class="section-top left reveal" style="margin-bottom:40px;">
+          <div class="philosophy-label">Sample Route · 10 Nights</div>
+          <h2>A Rajasthan we designed for one family last winter</h2>
+          <p>This is one version of Rajasthan. Your version will be different. But this gives you a sense of how we think about pacing, what we prioritise and what we deliberately leave out.</p>
+        </div>
+        <div style="border-top:1px solid var(--line);">
+          <div class="itinerary-day">
+            <div class="day-header open" onclick="toggleDay(this)">
+              <span class="day-num">Day 1</span>
+              <span class="day-title">Arrival in Jaipur · The Pink City at its own pace</span>
+              <span class="day-toggle">+</span>
+            </div>
+            <div class="day-body open">
+              <p>Arrive into Jaipur. No fort visits today — on day one, we let the city wash over you. Afternoon walk through the old city bazaars with a local textile historian (not a guide, a practitioner). Dinner at a restored haveli rooftop.</p>
+              <p>The itinerary begins gently by design. Jetlag and Rajasthan don't mix well when you're staring at ramparts wondering what time it is.</p>
+              <div class="day-stay"><strong>Stay:</strong>&nbsp; Samode Haveli, Jaipur · Heritage guesthouse, family-owned since 1784</div>
+            </div>
+          </div>
+          <div class="itinerary-day">
+            <div class="day-header" onclick="toggleDay(this)">
+              <span class="day-num">Day 2</span>
+              <span class="day-title">Amber Fort · Early, before the crowds, with a historian</span>
+              <span class="day-toggle">+</span>
+            </div>
+            <div class="day-body">
+              <p>We arrive at Amber at 6:45am when the gate opens. By 10am, it belongs to everyone else. You'll have had three and a half hours in the Sheesh Mahal — the Hall of Mirrors — and the zenana quarters with a historian who has been studying this fort for twenty years.</p>
+              <p>Afternoon: Jaipuri block printing workshop. Not a demonstration. You'll print something.</p>
+              <div class="day-stay"><strong>Stay:</strong>&nbsp; Samode Haveli, Jaipur</div>
+            </div>
+          </div>
+          <div class="itinerary-day">
+            <div class="day-header" onclick="toggleDay(this)">
+              <span class="day-num">Days 3–4</span>
+              <span class="day-title">Shekhawati · The open-air fresco gallery nobody talks about</span>
+              <span class="day-toggle">+</span>
+            </div>
+            <div class="day-body">
+              <p>Shekhawati is the answer to the question: what does Rajasthan look like away from the palace circuit? Merchant families who made their fortunes in Calcutta during the Raj returned home and commissioned havelis decorated floor-to-ceiling in frescoes — scenes from Hindu mythology jostling with steam engines, cars, and portraits of the King Emperor.</p>
+              <p>We spend two days here with a local historian who grew up in the region. Many of the havelis are privately owned and not officially open. She knows which families will show you inside over a cup of chai.</p>
+              <div class="day-stay"><strong>Stay:</strong>&nbsp; Castle Mandawa · 16th-century fort converted by the family themselves</div>
+            </div>
+          </div>
+          <div class="itinerary-day">
+            <div class="day-header" onclick="toggleDay(this)">
+              <span class="day-num">Days 5–6</span>
+              <span class="day-title">Jodhpur · The Blue City and the Mehrangarh</span>
+              <span class="day-toggle">+</span>
+            </div>
+            <div class="day-body">
+              <p>Mehrangarh Fort is, in our view, the most extraordinary fort in India — and the finest museum. We spend half a day inside with a curator. The other half is given to the old city: a cooking class in a home kitchen in the blue lanes, watching the light shift on the houses as the afternoon deepens.</p>
+              <p>Day 6 is flexible by design. We often add a dawn hot-air balloon over the fort for those who want it, or a day trip to Bishnoi villages to meet the community whose environmental ethic predates the modern environmental movement by four centuries.</p>
+              <div class="day-stay"><strong>Stay:</strong>&nbsp; Raas Jodhpur · Boutique property directly below the fort walls</div>
+            </div>
+          </div>
+          <div class="itinerary-day">
+            <div class="day-header" onclick="toggleDay(this)">
+              <span class="day-num">Days 7–8</span>
+              <span class="day-title">The Thar Desert · A night under no artificial light</span>
+              <span class="day-toggle">+</span>
+            </div>
+            <div class="day-body">
+              <p>We don't take clients to Jaisalmer's main dune — the one with the camel rides and the DJ. We go to a private concession twenty minutes further that is genuinely empty. One camp. Eight tents. Complete silence from sunset onwards.</p>
+              <p>Day 8 is the return journey, stopping at Jaisalmer Fort (one of the world's only living forts — families have lived inside it for nine hundred years) and a late lunch in the shadow of its walls.</p>
+              <div class="day-stay"><strong>Night 7:</strong>&nbsp; Private desert camp, Thar · Nights 8: Suryagarh, Jaisalmer</div>
+            </div>
+          </div>
+          <div class="itinerary-day">
+            <div class="day-header" onclick="toggleDay(this)">
+              <span class="day-num">Days 9–10</span>
+              <span class="day-title">Udaipur · The lake city as an ending, not a beginning</span>
+              <span class="day-toggle">+</span>
+            </div>
+            <div class="day-body">
+              <p>Most Rajasthan itineraries start in Udaipur. We end there, because it's the kind of city that rewards slowing down — and by day nine, you're ready to slow down. Lake Pichola at dusk from the right rooftop. The City Palace museum. A boat to the Jagmandir at golden hour.</p>
+              <p>Day 10: morning at leisure before departure transfers.</p>
+              <div class="day-stay"><strong>Stay:</strong>&nbsp; Taj Lake Palace or Raas Devigarh (your briefing decides which)</div>
+            </div>
+          </div>
+        </div><!-- end accordion -->
+      </div><!-- end main -->
+
+      <!-- Sidebar -->
+      <div class="sidebar-sticky reveal">
+        <div class="sidebar-card">
+          <h4>Plan This Journey</h4>
+          <p>This is a sample itinerary. Yours will be designed from scratch around your travel dates, group and interests.</p>
+          <a href="contact.html" class="btn-primary">Begin Your Enquiry</a>
+          <hr class="sidebar-divider">
+          <div class="sidebar-item"><span class="si-label">Duration</span><span>8–14 nights recommended</span></div>
+          <div class="sidebar-item"><span class="si-label">Season</span><span>October to February for best weather</span></div>
+          <div class="sidebar-item"><span class="si-label">Suits</span><span>Families, couples, heritage lovers, first-time India visitors</span></div>
+          <div class="sidebar-item"><span class="si-label">Entry</span><span>Fly into Jaipur or Delhi; depart from Udaipur or Jodhpur</span></div>
+          <div class="sidebar-item"><span class="si-label">Pairs with</span><span>Kerala, Goa or a Maldives extension</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Signature Stays -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-top left reveal">
+      <div class="philosophy-label">Where We Stay</div>
+      <h2>Stays we'd recommend without hesitation</h2>
+      <p>We don't have contractual obligations with any property. These are stays we've vetted ourselves.</p>
+    </div>
+    <div class="stays-grid">
+      <div class="stay-card reveal">
+        <div class="stay-img"><img src="images/destination-rajasthan.svg" alt="Samode Haveli"></div>
+        <div class="stay-info">
+          <div class="stay-type">Heritage · Jaipur</div>
+          <h4>Samode Haveli</h4>
+          <p>A family-owned haveli in the old city, run by the same family for over two centuries. Rooms built around inner courtyards still lit by oil lamps at dinner.</p>
+        </div>
+      </div>
+      <div class="stay-card reveal">
+        <div class="stay-img"><img src="images/destination-goa.svg" alt="Raas Jodhpur"></div>
+        <div class="stay-info">
+          <div class="stay-type">Boutique · Jodhpur</div>
+          <h4>Raas Jodhpur</h4>
+          <p>Contemporary design directly below the Mehrangarh walls. The rooftop pool looks straight into the fort. One of the better architectural decisions in Indian hospitality.</p>
+        </div>
+      </div>
+      <div class="stay-card reveal">
+        <div class="stay-img"><img src="images/destination-ladakh.svg" alt="Desert camp Thar"></div>
+        <div class="stay-info">
+          <div class="stay-type">Desert Camp · Jaisalmer</div>
+          <h4>Private Thar Camp</h4>
+          <p>Our preferred private concession. Eight tents, no generator after 10pm, a chef who cooks from a wood fire, and a sky without a single visible horizon light.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="testimonial-band">
+  <div class="wrap">
+    <p class="quote reveal">"We had been to Rajasthan once before on a group tour. We thought we knew it. We did not know it. This was something entirely different."</p>
+    <div class="attribution">Meghna &amp; Samir — Rajasthan with SV Signature, 11 nights</div>
+  </div>
+</section>
+
+<!-- Related destinations -->
+<section class="section-tight section-dim">
+  <div class="wrap">
+    <div class="section-top left reveal" style="margin-bottom:40px;">
+      <div class="philosophy-label">Continue the Journey</div>
+      <h2>Other destinations that pair well with Rajasthan</h2>
+    </div>
+    <div class="card-grid">
+      <a href="contact.html" class="dest-card reveal">
+        <img src="images/destination-kerala.svg" alt="Kerala">
+        <div class="dest-card-content">
+          <div class="dest-region">South India</div>
+          <h3>Kerala</h3>
+          <p>Contrast the desert with backwaters — a common two-region combination for 14–18 night trips.</p>
+        </div>
+      </a>
+      <a href="contact.html" class="dest-card reveal">
+        <img src="images/destination-ladakh.svg" alt="Ladakh">
+        <div class="dest-card-content">
+          <div class="dest-region">The Himalaya</div>
+          <h3>Ladakh</h3>
+          <p>For those who want to stay in the north — Rajasthan + Ladakh makes a 15-night arc.</p>
+        </div>
+      </a>
+      <a href="contact.html" class="dest-card reveal">
+        <img src="images/destination-goa.svg" alt="Goa">
+        <div class="dest-card-content">
+          <div class="dest-region">West Coast</div>
+          <h3>Goa</h3>
+          <p>End with three or four nights of coast — a natural decompression after the intensity of the desert.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-final">
+  <div class="hero-jali" style="background-image:url('images/jali-pattern.svg');right:auto;left:-10%;top:-20%;opacity:.06;"></div>
+  <div class="wrap">
+    <div class="philosophy-label">Your Rajasthan</div>
+    <h2>This route was designed for someone else. <em>Yours starts here.</em></h2>
+    <a href="contact.html" class="btn-primary">Plan My Trip to Rajasthan</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><a href="index.html" class="logo">SV <span class="mark">Signature</span> Holidays</a><p>A bespoke travel design studio crafting tailor-made journeys across India and beyond.</p></div>
+      <div><h5>Explore</h5><ul><li><a href="destinations.html">All Destinations</a></li><li><a href="experiences.html">Experiences</a></li><li><a href="destination-rajasthan.html">Rajasthan</a></li></ul></div>
+      <div><h5>Studio</h5><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h5>Get in Touch</h5><ul><li><a href="mailto:hello@svsignatureholidays.com">hello@svsignatureholidays.com</a></li><li><a href="tel:+919876543210">+91 98765 43210</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 SV Signature Holidays. All rights reserved.</span><span>Designed for those who travel differently.</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function toggleDay(header){
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
+</script>
+</body>
+</html>

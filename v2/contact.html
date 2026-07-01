@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan My Trip — SV Signature Holidays</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="destinations.html">Destinations</a>
+  <a href="experiences.html">Experiences</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Plan My Trip</a>
+</div>
+
+<header id="siteHeader" class="solid">
+  <a href="index.html" class="logo">SV <span class="mark">Signature</span> Holidays</a>
+  <nav>
+    <div class="nav-links">
+      <a class="nav-link" href="destinations.html">Destinations</a>
+      <a class="nav-link" href="experiences.html">Experiences</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link active" href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="enquire-btn">Plan My Trip</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="page-hero" style="min-height:45vh;padding-bottom:60px;">
+  <div class="hero-jali" style="background-image:url('images/jali-pattern.svg')"></div>
+  <div class="page-hero-content">
+    <div class="hero-eyebrow">Begin Here</div>
+    <h1>Tell us about your trip. <em>We'll take it from there.</em></h1>
+  </div>
+</section>
+
+<section class="section" style="padding-top:90px;padding-bottom:120px;">
+  <div class="wrap">
+    <div class="contact-grid">
+      <!-- Contact info -->
+      <div class="reveal">
+        <div class="philosophy-label">What Happens Next</div>
+        <h2>A conversation, not a quote.</h2>
+        <p>When you submit this form, one of our designers will read it — not a sales team, an actual person who will design your trip. They'll reply within one business day with a few clarifying questions.</p>
+        <p>From there we'll put together an initial proposal. It's detailed, it's free, and it commits you to nothing.</p>
+
+        <div class="contact-detail" style="margin-top:40px;">
+          <div class="label">Email</div>
+          <a href="mailto:hello@svsignatureholidays.com">hello@svsignatureholidays.com</a>
+        </div>
+        <div class="contact-detail">
+          <div class="label">Phone / WhatsApp</div>
+          <a href="tel:+919876543210">+91 98765 43210</a>
+        </div>
+        <div class="contact-detail">
+          <div class="label">Studio Hours</div>
+          <span>Monday – Saturday, 9am – 7pm IST</span>
+        </div>
+        <div class="contact-detail">
+          <div class="label">Based in</div>
+          <span>Chennai, India · Serving clients globally</span>
+        </div>
+
+        <!-- what to expect -->
+        <div style="margin-top:50px;border-top:1px solid var(--line);padding-top:36px;">
+          <div class="philosophy-label" style="margin-bottom:22px;">What to expect</div>
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            <div style="display:flex;gap:18px;align-items:flex-start;">
+              <div style="width:26px;height:26px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--maroon);font-weight:700;flex-shrink:0;margin-top:2px;">1</div>
+              <div><strong style="font-size:0.92rem;">Reply within 1 business day</strong><p style="font-size:0.86rem;color:#666;margin-top:4px;">From an actual designer, not an automated response.</p></div>
+            </div>
+            <div style="display:flex;gap:18px;align-items:flex-start;">
+              <div style="width:26px;height:26px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--maroon);font-weight:700;flex-shrink:0;margin-top:2px;">2</div>
+              <div><strong style="font-size:0.92rem;">A detailed proposal at no cost</strong><p style="font-size:0.86rem;color:#666;margin-top:4px;">Route, properties, pace, rationale — all of it, before you commit.</p></div>
+            </div>
+            <div style="display:flex;gap:18px;align-items:flex-start;">
+              <div style="width:26px;height:26px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--maroon);font-weight:700;flex-shrink:0;margin-top:2px;">3</div>
+              <div><strong style="font-size:0.92rem;">Revise until it's exactly right</strong><p style="font-size:0.86rem;color:#666;margin-top:4px;">We iterate. Most proposals go through two or three rounds before anyone's happy.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal">
+        <form id="enquiryForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" required placeholder="Arjun">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" required placeholder="Sharma">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="arjun@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="trip-type">Type of Journey</label>
+            <select id="trip-type" name="trip-type">
+              <option value="">Select one…</option>
+              <option>Honeymoon</option>
+              <option>Family Journey</option>
+              <option>Heritage &amp; Royal India</option>
+              <option>Wild India / Safari</option>
+              <option>Himalayan Expedition</option>
+              <option>Solo or Small Group</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="travellers">Number of Travellers</label>
+              <input type="number" id="travellers" name="travellers" min="1" placeholder="2">
+            </div>
+            <div class="form-group">
+              <label for="duration">Approximate Duration</label>
+              <select id="duration" name="duration">
+                <option value="">Select…</option>
+                <option>5–7 nights</option>
+                <option>8–10 nights</option>
+                <option>11–14 nights</option>
+                <option>15–21 nights</option>
+                <option>21+ nights</option>
+                <option>Not decided</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="when">When Are You Thinking of Travelling?</label>
+            <input type="text" id="when" name="when" placeholder="e.g. October 2026, Winter 2026, flexible">
+          </div>
+          <div class="form-group">
+            <label for="regions">Destinations / Regions of Interest</label>
+            <input type="text" id="regions" name="regions" placeholder="e.g. Rajasthan, Kerala, Ladakh — or tell us you're not sure">
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us More — How Do You Want This Trip to Feel?</label>
+            <textarea id="message" name="message" rows="5" placeholder="Describe the experience you're hoping for. The more you share, the more precisely we can design for you."></textarea>
+          </div>
+          <p class="form-note">We read every enquiry personally. We never share your details with third parties.</p>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;text-align:center;display:block;">Send My Enquiry</button>
+          <div class="form-success" id="formSuccess">
+            <strong>Thank you — we've received your enquiry.</strong><br>
+            A designer will be in touch within one business day. If your trip is time-sensitive, please also WhatsApp us directly at +91 98765 43210.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><a href="index.html" class="logo">SV <span class="mark">Signature</span> Holidays</a><p>A bespoke travel design studio crafting tailor-made journeys across India and beyond.</p></div>
+      <div><h5>Explore</h5><ul><li><a href="destinations.html">Destinations</a></li><li><a href="experiences.html">Experiences</a></li></ul></div>
+      <div><h5>Studio</h5><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h5>Get in Touch</h5><ul><li><a href="mailto:hello@svsignatureholidays.com">hello@svsignatureholidays.com</a></li><li><a href="tel:+919876543210">+91 98765 43210</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 SV Signature Holidays. All rights reserved.</span><span>Designed for those who travel differently.</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

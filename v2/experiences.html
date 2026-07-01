@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiences — SV Signature Holidays</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.exp-full-card{
+  display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); margin-bottom:3px;
+  transition:box-shadow .3s ease;
+}
+.exp-full-card:hover{box-shadow:0 8px 40px rgba(26,34,56,0.12);}
+.exp-full-card.reverse .efc-text{order:2;}
+.exp-full-card.reverse .efc-img{order:1;}
+@media (max-width:820px){ .exp-full-card,.exp-full-card.reverse{grid-template-columns:1fr;} .exp-full-card.reverse .efc-text{order:0;} .exp-full-card.reverse .efc-img{order:1;} }
+.efc-img{
+  aspect-ratio:4/3; overflow:hidden; position:relative;
+}
+.efc-img img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
+.exp-full-card:hover .efc-img img{transform:scale(1.05);}
+.efc-text{padding:60px 54px; display:flex; flex-direction:column; justify-content:center; background:var(--ivory);}
+@media (max-width:820px){ .efc-text{padding:36px 28px;} }
+.efc-num{font-family:'Fraunces',serif; font-style:italic; color:var(--gold); font-size:1.1rem; margin-bottom:14px;}
+.efc-text h3{font-size:1.75rem; font-weight:500; margin-bottom:16px; color:var(--indigo);}
+.efc-text p{color:#5a5a5a; font-size:0.96rem; line-height:1.7; margin-bottom:12px;}
+.efc-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px;}
+.tag{background:var(--ivory-dim); border:1px solid var(--line); padding:5px 14px; font-size:0.76rem; color:var(--indigo); letter-spacing:0.04em;}
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="destinations.html">Destinations</a>
+  <a href="experiences.html">Experiences</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Plan My Trip</a>
+</div>
+
+<header id="siteHeader" class="solid">
+  <a href="index.html" class="logo">SV <span class="mark">Signature</span> Holidays</a>
+  <nav>
+    <div class="nav-links">
+      <a class="nav-link" href="destinations.html">Destinations</a>
+      <a class="nav-link active" href="experiences.html">Experiences</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="enquire-btn">Plan My Trip</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="hero-jali" style="background-image:url('images/jali-pattern.svg')"></div>
+  <img src="images/experiences-hero.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;">
+  <div class="page-hero-content">
+    <div class="hero-eyebrow">How We Travel</div>
+    <h1>Journeys shaped around <em>who you are</em>, not where we send everyone.</h1>
+    <p class="lead">Six experience types. Infinite variations. Every one built from scratch for the person making the enquiry.</p>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div class="wrap">
+    <div>
+      <div class="philosophy-label">The Approach</div>
+      <h2>We start with a question, not an itinerary.</h2>
+    </div>
+    <div class="philosophy-body reveal">
+      <p>When you reach out to us, the first thing we ask isn't "how many days?" or "what's your budget?" It's something closer to: <em>what do you want this trip to feel like?</em></p>
+      <p>That question shapes everything — who we pair you with on the ground, which property sits at the centre of each night, whether we book you a private transfer or a sleeper train.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Experience cards full-width alternating -->
+<section class="section-tight">
+  <div class="wrap">
+    <div class="exp-full-card reveal">
+      <div class="efc-img"><img src="images/destination-kerala.svg" alt="Honeymoon in Kerala"></div>
+      <div class="efc-text">
+        <div class="efc-num">I</div>
+        <h3>Honeymoons</h3>
+        <p>We understand that a honeymoon isn't a holiday — it's a statement. It needs to feel effortless, private and unlike anything either of you has experienced before.</p>
+        <p>Our honeymoon itineraries run from five nights to three weeks. We match the pace, the region and the properties to how you actually want to spend the time — not what photographs best on social media.</p>
+        <p>Popular pairings: Kerala + Maldives · Rajasthan + Ranthambore · Goa + Andaman Islands</p>
+        <div class="efc-tags">
+          <span class="tag">Private properties</span>
+          <span class="tag">Couples dining</span>
+          <span class="tag">Water &amp; coast</span>
+          <span class="tag">Heritage palaces</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-full-card reverse reveal">
+      <div class="efc-text">
+        <div class="efc-num">II</div>
+        <h3>Family Journeys</h3>
+        <p>We travel with our own families. We know that the window between "Are we there yet?" and "Actually, this is incredible" is narrower than it looks — and we know how to stay in it.</p>
+        <p>We design family trips across three generations, from a grandparent who needs lift access to a teenager who needs wifi at dinner. We account for both, without making either feel like a compromise.</p>
+        <div class="efc-tags">
+          <span class="tag">Multi-generation</span>
+          <span class="tag">Activity mix</span>
+          <span class="tag">School-holiday timing</span>
+          <span class="tag">Accessible properties</span>
+        </div>
+      </div>
+      <div class="efc-img"><img src="images/destination-rajasthan.svg" alt="Family travel Rajasthan"></div>
+    </div>
+
+    <div class="exp-full-card reveal">
+      <div class="efc-img"><img src="images/destination-tamilnadu.svg" alt="Heritage India temples"></div>
+      <div class="efc-text">
+        <div class="efc-num">III</div>
+        <h3>Heritage &amp; Royal India</h3>
+        <p>The palace hotels everyone knows about aren't the point. We go deeper — a 400-year-old haveli with four rooms and a family who has lived in it for fifteen generations; a private evening in a fort that closes to tourists at five.</p>
+        <p>Our heritage itineraries are built around access: to spaces, to knowledge, to the kind of evening that doesn't appear on any booking platform.</p>
+        <div class="efc-tags">
+          <span class="tag">Private access</span>
+          <span class="tag">Expert historians</span>
+          <span class="tag">Heritage stays</span>
+          <span class="tag">Curated dinners</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-full-card reverse reveal">
+      <div class="efc-text">
+        <div class="efc-num">IV</div>
+        <h3>Wild India</h3>
+        <p>We work exclusively with naturalists and conservationists — not generic guides — so that what you understand about what you're seeing is as extraordinary as seeing it.</p>
+        <p>Ranthambore, Kanha, Bandhavgarh, Satpura, Tadoba. We know which zones, which jeeps, which camps sit close enough to feel immersed without the generator noise.</p>
+        <div class="efc-tags">
+          <span class="tag">Tiger reserves</span>
+          <span class="tag">Expert naturalists</span>
+          <span class="tag">Luxury camps</span>
+          <span class="tag">Bird specialists</span>
+        </div>
+      </div>
+      <div class="efc-img"><img src="images/destination-sikkim.svg" alt="Wild forests India"></div>
+    </div>
+
+    <div class="exp-full-card reveal">
+      <div class="efc-img"><img src="images/destination-ladakh.svg" alt="Ladakh mountains expedition"></div>
+      <div class="efc-text">
+        <div class="efc-num">V</div>
+        <h3>Himalayan Expeditions</h3>
+        <p>The Himalaya is not a backdrop. It takes time to understand — altitude, acclimatisation, weather windows — and we build in all of it, quietly, so you never feel managed.</p>
+        <p>Ladakh's high passes. Sikkim's Dzongu valley. The Zanskar in winter. We design Himalayan journeys that respect the mountain's pace and reward it with the kind of access that rushed trips never reach.</p>
+        <div class="efc-tags">
+          <span class="tag">Altitude planning</span>
+          <span class="tag">Monastery permits</span>
+          <span class="tag">Remote camps</span>
+          <span class="tag">Trek + culture mix</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-full-card reverse reveal">
+      <div class="efc-text">
+        <div class="efc-num">VI</div>
+        <h3>Solo &amp; Small Group</h3>
+        <p>Solo travel in India is extraordinary and underrated. We make it safe, seamless and social — not in a group-tour way, but in the sense that you'll share a table or a jeep with the right person at the right moment.</p>
+        <p>For curated small groups: we cap at six. We choose the travellers as carefully as we choose the itinerary. The dinner conversation is part of the design.</p>
+        <div class="efc-tags">
+          <span class="tag">Solo travellers</span>
+          <span class="tag">Groups max 6</span>
+          <span class="tag">Curated matchmaking</span>
+          <span class="tag">Flexible pacing</span>
+        </div>
+      </div>
+      <div class="efc-img"><img src="images/destination-goa.svg" alt="Solo travel Goa"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="testimonial-band">
+  <div class="wrap">
+    <p class="quote reveal">"We told them we wanted to feel small in the best possible way — small in front of something ancient and enormous. They delivered it three times in twelve days."</p>
+    <div class="attribution">Ravi &amp; Deepa — Ladakh, Spiti &amp; Kinnaur, 12 days</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="hero-jali" style="background-image:url('images/jali-pattern.svg');right:auto;left:-10%;top:-20%;opacity:.06;"></div>
+  <div class="wrap">
+    <div class="philosophy-label">Your Experience</div>
+    <h2>Which of these sounds most like <em>you?</em></h2>
+    <a href="contact.html" class="btn-primary">Tell Us About Your Trip</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><a href="index.html" class="logo">SV <span class="mark">Signature</span> Holidays</a><p>A bespoke travel design studio crafting tailor-made journeys across India and beyond.</p></div>
+      <div><h5>Explore</h5><ul><li><a href="destinations.html">Destinations</a></li><li><a href="experiences.html">Experiences</a></li><li><a href="destination-rajasthan.html">Rajasthan</a></li></ul></div>
+      <div><h5>Studio</h5><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#team">Our Team</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h5>Get in Touch</h5><ul><li><a href="mailto:hello@svsignatureholidays.com">hello@svsignatureholidays.com</a></li><li><a href="tel:+919876543210">+91 98765 43210</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 SV Signature Holidays. All rights reserved.</span><span>Designed for those who travel differently.</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

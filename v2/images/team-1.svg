@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#1A2238"/>
+  <circle cx="200" cy="155" r="65" fill="#D4A24C" opacity="0.25"/>
+  <circle cx="200" cy="155" r="52" fill="#D4A24C" opacity="0.15"/>
+  <!-- face shape -->
+  <ellipse cx="200" cy="148" rx="38" ry="44" fill="#E8C988" opacity="0.7"/>
+  <!-- hair -->
+  <path d="M162 130 Q180 100 200 110 Q220 100 238 130 Q228 108 200 108 Q172 108 162 130 Z" fill="#1A2238" opacity="0.9"/>
+  <!-- shoulders -->
+  <path d="M130 400 Q148 320 200 310 Q252 320 270 400 Z" fill="#6B1E2E" opacity="0.85"/>
+  <!-- collar -->
+  <path d="M185 310 L200 330 L215 310" fill="none" stroke="#F7F2E9" stroke-width="1.5" opacity="0.5"/>
+</svg>

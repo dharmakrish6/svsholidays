@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10142A"/>
+      <stop offset="60%" stop-color="#1A2238"/>
+      <stop offset="100%" stop-color="#2A3A5A"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bgA)"/>
+  <!-- abstract India map suggestion -->
+  <path d="M300 200 Q360 180 420 195 Q480 185 500 220 Q540 250 550 300 Q575 360 560 420 Q545 490 520 540 Q490 600 460 650 Q440 700 400 750 Q360 700 340 650 Q310 600 280 540 Q255 490 245 420 Q230 360 250 300 Q260 250 300 200 Z"
+    fill="none" stroke="#D4A24C" stroke-width="1.5" opacity="0.35"/>
+  <!-- destination dots with gold rings -->
+  <g>
+    <circle cx="380" cy="320" r="20" fill="none" stroke="#D4A24C" stroke-width="1" opacity="0.5"/>
+    <circle cx="380" cy="320" r="5" fill="#D4A24C" opacity="0.8"/>
+    <circle cx="430" cy="440" r="20" fill="none" stroke="#D4A24C" stroke-width="1" opacity="0.4"/>
+    <circle cx="430" cy="440" r="5" fill="#D4A24C" opacity="0.7"/>
+    <circle cx="340" cy="560" r="20" fill="none" stroke="#D4A24C" stroke-width="1" opacity="0.4"/>
+    <circle cx="340" cy="560" r="5" fill="#D4A24C" opacity="0.7"/>
+    <circle cx="470" cy="580" r="20" fill="none" stroke="#D4A24C" stroke-width="1" opacity="0.3"/>
+    <circle cx="470" cy="580" r="5" fill="#D4A24C" opacity="0.6"/>
+    <circle cx="390" cy="680" r="20" fill="none" stroke="#D4A24C" stroke-width="1" opacity="0.3"/>
+    <circle cx="390" cy="680" r="5" fill="#D4A24C" opacity="0.6"/>
+  </g>
+  <!-- connecting dotted route lines -->
+  <g stroke="#D4A24C" stroke-width="1" stroke-dasharray="5,8" opacity="0.25" fill="none">
+    <path d="M380 320 Q420 380 430 440"/>
+    <path d="M430 440 Q380 510 340 560"/>
+    <path d="M430 440 Q460 510 470 580"/>
+    <path d="M340 560 Q365 620 390 680"/>
+    <path d="M470 580 Q430 630 390 680"/>
+  </g>
+  <!-- large jali ring -->
+  <circle cx="400" cy="500" r="280" fill="none" stroke="#F7F2E9" stroke-width="0.6" opacity="0.08"/>
+  <circle cx="400" cy="500" r="200" fill="none" stroke="#F7F2E9" stroke-width="0.6" opacity="0.08"/>
+</svg>
