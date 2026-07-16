@@ -44,6 +44,17 @@ if (hamburger && navPanel && navBackdrop) {
   });
 }
 
+const pkgTabs = document.querySelectorAll('.pkg-tab');
+pkgTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    pkgTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+    document.querySelectorAll('.pkg-grid').forEach(grid => grid.classList.remove('is-active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById(tab.dataset.target).classList.add('is-active');
+  });
+});
+
 const visitEl = document.getElementById('siteVisits');
 if (visitEl) {
   fetch('https://abacus.jasoncameron.dev/hit/svsignatureholidays-com/visits')
