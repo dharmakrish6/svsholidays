@@ -55,6 +55,13 @@ pkgTabs.forEach(tab => {
   });
 });
 
+document.querySelectorAll('.pkg-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a.text-cta')) return;
+    card.classList.toggle('flipped');
+  });
+});
+
 const visitEl = document.getElementById('siteVisits');
 if (visitEl) {
   fetch('https://abacus.jasoncameron.dev/hit/svsignatureholidays-com/visits')
