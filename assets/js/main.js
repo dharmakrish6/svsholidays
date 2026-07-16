@@ -15,6 +15,35 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 revealEls.forEach(el => io.observe(el));
 
+const hamburger = document.getElementById('hamburgerBtn');
+const navPanel = document.getElementById('navPanel');
+const navBackdrop = document.getElementById('navBackdrop');
+
+function closeNav() {
+  hamburger.classList.remove('open');
+  navPanel.classList.remove('nav-open');
+  navBackdrop.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('nav-locked');
+}
+function openNav() {
+  hamburger.classList.add('open');
+  navPanel.classList.add('nav-open');
+  navBackdrop.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.classList.add('nav-locked');
+}
+if (hamburger && navPanel && navBackdrop) {
+  hamburger.addEventListener('click', () => {
+    navPanel.classList.contains('nav-open') ? closeNav() : openNav();
+  });
+  navPanel.querySelectorAll('a, button').forEach(el => el.addEventListener('click', closeNav));
+  navBackdrop.addEventListener('click', closeNav);
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeNav();
+  });
+}
+
 const visitEl = document.getElementById('siteVisits');
 if (visitEl) {
   fetch('https://abacus.jasoncameron.dev/hit/svsignatureholidays-com/visits')

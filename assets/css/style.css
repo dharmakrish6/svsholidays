@@ -83,7 +83,6 @@ nav a.nav-link::after{
 }
 nav a.nav-link:hover::after{width:100%;}
 .nav-links{display:flex; gap:34px;}
-@media (max-width:900px){ .nav-links{display:none;} }
 .enquire-btn{
   border:1px solid var(--gold);
   color:var(--ivory);
@@ -98,6 +97,70 @@ nav a.nav-link:hover::after{width:100%;}
 }
 header.scrolled .enquire-btn{color:var(--indigo); border-color:var(--indigo);}
 .enquire-btn:hover{background:var(--gold); color:var(--indigo-deep); border-color:var(--gold);}
+
+/* ===== Hamburger (mobile) ===== */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  width:36px; height:36px;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  z-index:210;
+  flex-shrink:0;
+}
+.hamburger span{
+  display:block;
+  width:26px; height:2px;
+  background:var(--ivory);
+  transition:background .4s ease, transform .3s ease, opacity .3s ease;
+}
+header.scrolled .hamburger span{background:var(--indigo);}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+
+.nav-backdrop{
+  position:fixed; inset:0;
+  background:rgba(16,20,42,0.55);
+  opacity:0; pointer-events:none;
+  transition:opacity .35s ease;
+  z-index:204;
+}
+.nav-backdrop.open{opacity:1; pointer-events:auto;}
+
+body.nav-locked{overflow:hidden;}
+
+@media (max-width:900px){
+  header{padding:18px 22px;}
+  header.scrolled{padding:12px 22px;}
+  .logo{font-size:1.1rem;}
+  header .logo img{height:56px;}
+  header.scrolled .logo img{height:40px;}
+  .hamburger{display:flex;}
+  nav{
+    position:fixed; top:0; right:0;
+    height:100vh;
+    width:min(80vw, 320px);
+    background:var(--indigo-deep);
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    gap:40px;
+    padding:100px 40px 60px;
+    transform:translateX(100%);
+    transition:transform .45s ease;
+    z-index:205;
+    box-shadow:-12px 0 40px rgba(0,0,0,0.3);
+  }
+  nav.nav-open{transform:translateX(0);}
+  .nav-links{flex-direction:column; align-items:flex-start; gap:28px;}
+  nav a.nav-link{color:var(--ivory); font-size:1.05rem;}
+  nav .enquire-btn{color:var(--ivory); border-color:var(--gold); width:100%; text-align:center;}
+}
 
 /* ===== Hero ===== */
 .hero{

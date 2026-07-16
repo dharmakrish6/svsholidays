@@ -18,7 +18,10 @@
 
 <header id="siteHeader">
   <a href="#top" class="logo"><img src="assets/logo-mark.png" alt="SV Signature Holidays"> <span class="mark">Signature</span> Holidays</a>
-  <nav>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navPanel">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="navPanel">
     <div class="nav-links">
       <a class="nav-link" href="#trail">Destinations</a>
       <a class="nav-link" href="#experiences">Experiences</a>
@@ -27,6 +30,7 @@
     </div>
     <button class="enquire-btn">Plan My Trip</button>
   </nav>
+  <div class="nav-backdrop" id="navBackdrop"></div>
 </header>
 
 <section class="hero" id="top">
