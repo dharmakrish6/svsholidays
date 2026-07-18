@@ -137,7 +137,7 @@ header.scrolled .hamburger span{background:var(--indigo);}
 
 body.nav-locked{overflow:hidden;}
 
-@media (max-width:900px){
+@media (max-width:1200px){
   header{padding:18px 22px;}
   header.scrolled{padding:12px 22px;}
   .logo{font-size:1.1rem;}

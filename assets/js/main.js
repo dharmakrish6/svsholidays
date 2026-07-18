@@ -40,7 +40,7 @@ if (hamburger && navPanel && navBackdrop) {
   navPanel.querySelectorAll('a, button').forEach(el => el.addEventListener('click', closeNav));
   navBackdrop.addEventListener('click', closeNav);
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) closeNav();
+    if (window.innerWidth > 1200) closeNav();
   });
 }
 
