@@ -64,8 +64,8 @@ header.scrolled{
 header.scrolled .logo{color:var(--indigo);}
 .logo .mark{color:var(--gold); font-style:italic; font-weight:400;}
 .logo img{height:40px; width:auto; display:block;}
-header .logo img{height:120px; transition:height .4s ease;}
-header.scrolled .logo img{height:52px;}
+header .logo img{height:60px; transition:height .4s ease;}
+header.scrolled .logo img{height:48px;}
 nav{display:flex; align-items:center; gap:38px;}
 nav a.nav-link{
   color:var(--ivory);
